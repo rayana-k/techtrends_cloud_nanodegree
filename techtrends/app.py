@@ -6,7 +6,7 @@ from flask import Flask, jsonify, json, render_template, request, url_for, redir
 from werkzeug.exceptions import abort
 db_connection_count = 0
 
-# Task 1.3
+# Task 1.3: reference Knowledge QnA
 logger = logging.getLogger("__name__")
 logging.basicConfig(level=logging.DEBUG)
 h1 = logging.StreamHandler(sys.stdout)
@@ -16,7 +16,7 @@ h2.setLevel(logging.ERROR)
 logger.addHandler(h1)
 logger.addHandler(h2)
 
-# to get current time and date to append to log outputs
+# to get current time and date to append to log outputs: reference python datetime docs and forums
 today = date.today()
 today_date = str(today.day) + '/' + str(today.month) + '/' + str(today.year)
 now = datetime.now()
