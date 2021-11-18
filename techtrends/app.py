@@ -6,7 +6,7 @@ from flask import Flask, jsonify, json, render_template, request, url_for, redir
 from werkzeug.exceptions import abort
 db_connection_count = 0
 
-# Task 1.3: reference Knowledge QnA
+# Task 1.3 - add logs to application [reference Knowledge QnA]
 logger = logging.getLogger("__name__")
 logging.basicConfig(level=logging.DEBUG)
 h1 = logging.StreamHandler(sys.stdout)
@@ -56,7 +56,7 @@ def index():
     return render_template('index.html', posts=posts)
 
 
-# Task 1.1
+# Task 1.1 - create a "/healthz" endpoint
 @app.route("/healthz")
 def healthz():
     app.logger.info(current_datetime + ', Status request successful!')
@@ -64,7 +64,7 @@ def healthz():
     # jsonify() returns a Response object with the application/json mimetype set
 
 
-# Task 1.2
+# Task 1.2 - create a dynamic "/metrics" endpoint
 @app.route("/metrics")
 def metrics():
     app.logger.info(current_datetime + ', Metrics request successful!')
