@@ -21,12 +21,12 @@ spec:
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         livenessProbe:
           httpGet:
-            path: {{ .Values.containers.livenessProbe.httpGet.path }}
-            port: {{ .Values.containers.livenessProbe.httpGet.port }}
+            path: {{ .Values.livenessProbe.path }}
+            port: {{ .Values.livenessProbe.port }}
         readinessProbe:
           httpGet:
-            path: {{ .Values.containers.readinessProbe.httpGet.path }}
-            port: {{ .Values.containers.readinessProbe.httpGet.port }}
+            path: {{ .Values.readinessProbe.path }}
+            port: {{ .Values.readinessProbe.port }}
         resources:
           requests:
             cpu: {{ .Values.resources.requests.cpu }}
@@ -35,4 +35,4 @@ spec:
             cpu: {{ .Values.resources.limits.cpu }}
             memory: {{ .Values.resources.limits.memory }}
         ports:
-        - containerPort: {{ .Values.containers.ports.containerPort }}
+        - containerPort: {{ .Values.ports.containerPort }}
