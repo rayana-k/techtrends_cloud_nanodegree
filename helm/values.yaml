@@ -23,7 +23,7 @@ resources:
     memory: 128Mi
 
 ports:
-  - containerPort: 3111
+    containerPort: 3111
 livenessProbe:
   httpGet:
     path: /healthz
